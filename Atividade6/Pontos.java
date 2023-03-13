@@ -5,7 +5,10 @@ public class Pontos {
     private int y1;
     private int x2;
     private int y2;
-    
+
+    public Pontos(int a, int b, int c) {
+
+    }
     
 
 }
