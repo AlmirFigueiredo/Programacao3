@@ -25,7 +25,10 @@ public class Bhaskara {
     private void calculateR2() {
         this.r2 = ((-this.b + Math.sqrt(this.delta))/2*this.a);
     }
-
-
-
+    public double getR1() {
+        return r1;
+    }
+    public double getR2() {
+        return r2;
+    }
 }
