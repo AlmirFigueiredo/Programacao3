@@ -7,8 +7,6 @@ public class Points {
     private double y2;
     private double distance;
 
-
-
     public Points(int a, int b, int c, int y1, int y2) {
         Bhaskara calculateRoots = new Bhaskara(a, b, c);
         this.x1 = calculateRoots.getR1();
@@ -36,5 +34,6 @@ public class Points {
     public double getDistance() {
         return distance;
     }
+
 
 }
