@@ -10,5 +10,14 @@ public class Circle {
         this.yc = yc;
         this.r = r;
     }
+    public double getXc() {
+        return xc;
+    }
+    public double getYc() {
+        return yc;
+    }
+    public double getR() {
+        return r;
+    }
     
 }
