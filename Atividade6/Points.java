@@ -50,8 +50,8 @@ public class Points {
     }
     private void compare() {
         this.isEqual = this.distance == this.circum.getR();
-        this.isRBigger = this.circum.getR() > this.circum.getR();
-        this.isRSmaller = this.circum.getR() < this.circum.getR();
+        this.isRBigger = this.circum.getR() > this.distance;
+        this.isRSmaller = this.circum.getR() < this.distance;
         this.isPointInCircle = this.distance <= this.circum.getR();
     }
     
