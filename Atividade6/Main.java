@@ -15,7 +15,7 @@ public class Main {
             double cC = input.nextDouble();
             System.out.print("\nDigite o raio da circunferencia: ");
             double rC = input.nextDouble();
-            Circle c = new Circle(rC, aC, bC, rC);
+            Circle c = new Circle(rC, aC, bC, cC);
 
             System.out.println("Digite os coeficientes do ponto que deseja comparar:");
             System.out.print("Coeficiente a: ");
@@ -27,11 +27,30 @@ public class Main {
             Points p = new Points(aP, bP, cP, c);
             double distanceAmong = p.getDistance();
             System.out.printf("\nA distancia entre os pontos é de: %.2f\n", distanceAmong);
-            
-
-
-            
-
+            System.out.println("O ponto esta dentro da circunferencia?");
+            if(p.getIsPointInCircle()) {
+                System.out.println("Sim");
+            } else {
+                System.out.println("Nao");
+            }
+            System.out.println("O raio é maior que a distancia entre os pontos?");
+            if(p.getIsRBigger()) {
+                System.out.println("Sim");
+            } else {
+                System.out.println("Nao");
+            }
+            System.out.println("O raio é menor que a distancia entre os pontos?");
+            if(p.getIsRSmaller()) {
+                System.out.println("Sim");
+            } else {
+                System.out.println("Nao");
+            }
+            System.out.println("O raio é igual a distanca entre os pontos?");
+            if(p.getIsEqual()) {
+                System.out.println("Sim");
+            } else {
+                System.out.println("Nao");
+            }
             System.out.println("Deseja realizar outra comparacao?");
             char option = input.next().toUpperCase().trim().charAt(0);
             if(option == 'N') {

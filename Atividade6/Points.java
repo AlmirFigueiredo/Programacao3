@@ -8,6 +8,7 @@ public class Points {
     private boolean isEqual;
     private boolean isRBigger;
     private boolean isRSmaller;
+    private boolean isPointInCircle;
 
     public Points(double a, double b, double c, Circle circum) {
         Bhaskara bhask = new Bhaskara(a, b, c);
@@ -39,6 +40,9 @@ public class Points {
     public boolean getIsRSmaller() {
         return this.isRSmaller;
     }
+    public boolean getIsPointInCircle() {
+        return this.isPointInCircle;
+    }
     private double calculateDistance() {
         double x2 = this.circum.getXc();
         double y2 = this.circum.getYc();
@@ -48,6 +52,7 @@ public class Points {
         this.isEqual = this.distance == this.circum.getR();
         this.isRBigger = this.circum.getR() > this.circum.getR();
         this.isRSmaller = this.circum.getR() < this.circum.getR();
+        this.isPointInCircle = this.distance <= this.circum.getR();
     }
     
 }
