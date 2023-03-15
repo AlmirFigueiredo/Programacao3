@@ -17,7 +17,7 @@ public class Main {
             double rC = input.nextDouble();
             Circle c = new Circle(rC, aC, bC, cC);
 
-            System.out.println("Digite os coeficientes do ponto que deseja comparar:");
+            System.out.println("\nDigite os coeficientes do ponto que deseja comparar:");
             System.out.print("Coeficiente a: ");
             double aP = input.nextDouble();
             System.out.print("\nCoeficiente b: ");
