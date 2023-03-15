@@ -8,7 +8,7 @@ public class Bhaskara {
     private double r1;
     private double r2;
 
-    public Bhaskara(int _a, int _b, int _c) {
+    public Bhaskara(double _a, double _b, double _c) {
         this.a = _a;
         this.b = _b;
         this.c = _c;

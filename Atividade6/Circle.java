@@ -5,9 +5,10 @@ public class Circle {
     private double yc;
     private double r;
 
-    public Circle(double xc, double yc, double r) {
-        this.xc = xc;
-        this.yc = yc;
+    public Circle(double r, double a, double b, double c) {
+        Bhaskara bhask = new Bhaskara(a, b, c);
+        this.xc = bhask.getR1();
+        this.yc = bhask.getR2();
         this.r = r;
     }
     public double getXc() {
