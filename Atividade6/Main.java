@@ -6,15 +6,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         while(true) {
-            System.out.println("Digite o ponto C (centro do circulo):");
-            
-            System.out.println("Digite os coeficientes relacionados com as coordenadas->");
+            System.out.println("Digite os coeficientes do ponto C (centro do circulo)->");
             System.out.print("Coeficiente a: ");
             double aC = input.nextDouble();
             System.out.print("\nCoeficiente b: ");
             double bC = input.nextDouble();
             System.out.print("\nCoeficiente c: ");
             double cC = input.nextDouble();
+            System.out.print("\nDigite o raio da circunferencia: ");
+            double rC = input.nextDouble();
+            Circle c = new Circle(rC, aC, bC, rC);
+
+            
 
             
 
