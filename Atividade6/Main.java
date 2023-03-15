@@ -17,20 +17,17 @@ public class Main {
             double rC = input.nextDouble();
             Circle c = new Circle(rC, aC, bC, rC);
 
+            System.out.println("Digite os coeficientes do ponto que deseja comparar:");
+            System.out.print("Coeficiente a: ");
+            double aP = input.nextDouble();
+            System.out.print("\nCoeficiente b: ");
+            double bP = input.nextDouble();
+            System.out.print("\nCoeficiente c: ");
+            double cP = input.nextDouble();
+            Points p = new Points(aP, bP, cP, c);
+            double distanceAmong = p.getDistance();
+            System.out.printf("\nA distancia entre os pontos é de: %.2f\n", distanceAmong);
             
-
-            
-
-
-
-
-
-            System.out.println("\nEixo Vertical: ");
-            double yC = input.nextDouble();
-            System.out.print("\nDigite o raio da circunferencia:");
-            double r = input.nextDouble();
-            
-            System.out.println("\nDigite o ponto que deseja comparar:");
 
 
             

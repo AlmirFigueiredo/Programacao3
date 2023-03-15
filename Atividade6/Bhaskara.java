@@ -17,7 +17,7 @@ public class Bhaskara {
         calculateR2();
     }
     private void calculateDelta() {
-        this.delta = (Math.pow(this.b, 2) - 4*(this.a * this.c));
+        this.delta = Math.abs((Math.pow(this.b, 2) - 4*(this.a * this.c)));
     }
     private void calculateR1() {
         this.r1 = ((-this.b - Math.sqrt(this.delta))/2*this.a);
