@@ -1,4 +1,4 @@
-package Atividade8;
+package Atividade8.PacotePrincipal;
 
 public class Banco extends Conta{
     private Conta[] contasBancarias;
