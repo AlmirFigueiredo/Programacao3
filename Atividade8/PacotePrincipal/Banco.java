@@ -8,6 +8,9 @@ public class Banco{
         this.quantidadeContas = 0;
         this.contasBancarias = new Conta[0];
     }
+    public int getQuantidadeContas() {
+        return quantidadeContas;
+    }
     public void adicionarConta(Conta novaConta) {
         Conta[] temp = new Conta[this.quantidadeContas+1];
         for(int i = 0; i < this.quantidadeContas; i++) {

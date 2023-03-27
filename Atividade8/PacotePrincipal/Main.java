@@ -7,11 +7,11 @@ import Atividade8.PacoteInterno.DiasDaSemana;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        Banco BrasilBank = new Banco();
 
-        DiasDaSemana diaSelecionado;
-        
         System.out.println("Escolha a opcao que representa o dia da semana:");
         while(true) {
+            DiasDaSemana diaSelecionado;
             System.out.println("(0)Encerrar programa\n(1)Domingo\n(2)Segunda-feira\n(3)Terca-feira\n(4)Quarta-feira\n(5)Quinta-feira\n(6)Sexta-feira\n(7)Sabado");
             int day = input.nextInt();
             switch(day) {
@@ -68,10 +68,16 @@ public class Main {
                         System.out.println("Qual e o saldo inicial?");
                         double saldoInicial = input.nextDouble();
                         Conta novaConta = new Conta(nome, cpf, saldoInicial);
+                        BrasilBank.adicionarConta(novaConta);
 
+                case 1: System.out.println("Digite o numero da sua conta:");
+                        String conta = input.nextLine();
+                        System.out.println("Digite o seu cpf:");
+                        String cpfBusca = input.nextLine();
+                        BrasilBank.removerConta(conta, cpfBusca);
+                        break;
+                case 2: System.out.println();
 
-                case 1:
-                case 2:
                 case 3: System.out.println("Programa encerrado!");
                         System.exit(0);
                 default: System.out.println("Digite uma opcao valida!!");

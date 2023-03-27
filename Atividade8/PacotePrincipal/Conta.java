@@ -11,6 +11,7 @@ public class Conta {
         this.nome = nome;
         this.cpf = cpf;
         this.saldo = saldoInicial;
+        criarNumeroDaConta();
     }
 
     public void criarNumeroDaConta() {
