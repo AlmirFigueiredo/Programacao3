@@ -59,7 +59,15 @@ public class Main {
         showMainOptions();
         while(true) {
             switch(option) {
-                case 0:
+                case 0: input.nextLine();
+                        System.out.println("Digite o nome do usuario:");
+                        String nome = input.nextLine();
+                        System.out.println("Digite o seu cpf(so numeros):");
+                        String cpf = input.nextLine();
+                        System.out.println("Qual e o saldo inicial?");
+                        double saldoInicial = input.nextDouble();
+                        Conta novaConta = Conta(nome, cpf, saldoInicial);
+
                 case 1:
                 case 2:
                 case 3: System.out.println("Programa encerrado!");
