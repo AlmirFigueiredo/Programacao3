@@ -8,11 +8,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Escolha a opcao que representa o dia da semana:");
-        System.out.println("(0)Encerrar programa\n(1)Domingo\n(2)Segunda-feira\n(3)Terca-feira\n(4)Quarta-feira\n(5)Quinta-feira\n(6)Sexta-feira\n(7)Sabado");
-        int day = input.nextInt();
         DiasDaSemana diaSelecionado;
+        System.out.println("Escolha a opcao que representa o dia da semana:");
         while(true) {
+            System.out.println("(0)Encerrar programa\n(1)Domingo\n(2)Segunda-feira\n(3)Terca-feira\n(4)Quarta-feira\n(5)Quinta-feira\n(6)Sexta-feira\n(7)Sabado");
+            int day = input.nextInt();
             switch(day) {
                 case 0: System.out.println("Programa encerrado!");
                         System.exit(0);
@@ -47,18 +47,42 @@ public class Main {
                         break;
                 default:
                         System.out.println("Opcao invalida!");
+                        System.out.println("Digite uma opcao valida:");
+                        day = input.nextInt();
             }
             if(!(day > 7 || day < 0)) {
                 break;
             }
         }
-        
+        System.out.println("Selecione a opcao que deseja:");
+        int option = input.nextInt();
+        showMainOptions();
+        while(true) {
+            switch(option) {
+                case 0:
+                case 1:
+                case 2:
+                case 3: System.out.println("Programa encerrado!");
+                        System.exit(0);
+                default: System.out.println("Digite uma opcao valida!!");
+
+
+
+            }
+            if(!(option > 4 || option < 1)) {
+                break;
+            }
+        }
+
 
 
 
         input.close();
     }
     public static void showMainOptions() {
-        System.out.println("");
+        System.out.println("(0)Criar conta no banco\n(1)Depositar\n(2)Sacar\n(3)Encerrar programa");
+    }
+    public static void showDaysOptions() {
+        System.out.println("(0)Encerrar programa\n(1)Domingo\n(2)Segunda-feira\n(3)Terca-feira\n(4)Quarta-feira\n(5)Quinta-feira\n(6)Sexta-feira\n(7)Sabado");
     }
 }
