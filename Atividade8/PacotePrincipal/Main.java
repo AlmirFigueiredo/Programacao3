@@ -9,6 +9,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         DiasDaSemana diaSelecionado;
+        
         System.out.println("Escolha a opcao que representa o dia da semana:");
         while(true) {
             System.out.println("(0)Encerrar programa\n(1)Domingo\n(2)Segunda-feira\n(3)Terca-feira\n(4)Quarta-feira\n(5)Quinta-feira\n(6)Sexta-feira\n(7)Sabado");
@@ -66,7 +67,8 @@ public class Main {
                         String cpf = input.nextLine();
                         System.out.println("Qual e o saldo inicial?");
                         double saldoInicial = input.nextDouble();
-                        Conta novaConta = Conta(nome, cpf, saldoInicial);
+                        Conta novaConta = new Conta(nome, cpf, saldoInicial);
+
 
                 case 1:
                 case 2:

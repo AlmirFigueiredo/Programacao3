@@ -1,6 +1,6 @@
 package Atividade8.PacotePrincipal;
 
-public abstract class Conta {
+public class Conta {
     protected String nome;
     protected String cpf;
     protected double saldo;

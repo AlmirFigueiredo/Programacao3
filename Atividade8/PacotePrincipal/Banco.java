@@ -1,6 +1,6 @@
 package Atividade8.PacotePrincipal;
 
-public class Banco extends Conta{
+public class Banco{
     private Conta[] contasBancarias;
     private int quantidadeContas;
 
