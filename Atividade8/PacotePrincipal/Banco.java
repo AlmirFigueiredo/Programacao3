@@ -38,7 +38,7 @@ public class Banco{
 
     public Conta AcharConta(String cpf, String numeroDaConta) {
         for(int i = 0; i < this.quantidadeContas; i++) {
-            if(this.contasBancarias[i].cpf.equals(cpf) && this.contasBancarias[i].numeroDaConta.equals(numeroDaConta)) {
+            if(this.contasBancarias[i].getCpf().equals(cpf) && this.contasBancarias[i].getNumeroDaConta().equals(numeroDaConta)) {
                 return this.contasBancarias[i];
             }
         }
