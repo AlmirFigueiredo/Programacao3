@@ -69,6 +69,8 @@ public class Main {
                         double saldoInicial = input.nextDouble();
                         Conta novaConta = new Conta(nome, cpf, saldoInicial);
                         BrasilBank.adicionarConta(novaConta);
+                        System.out.println("Conta cadastrada!");
+                        System.out.printf("O numero da sua conta e: %s\n", novaConta.getNumeroDaConta());
 
                 case 1: input.nextLine();
                         System.out.println("Digite o cpf:");
@@ -84,9 +86,22 @@ public class Main {
                             BrasilBank.depositar(deposite, conta);
                             System.out.println("Valor depositado!");
                         }
-
                         break;
-                case 2: System.out.println("");
+
+                case 2: input.nextLine();
+                        System.out.println("Digite o cpf:");
+                        String conCPF = input.nextLine();
+                        System.out.println("Digite o numero da conta:");
+                        String consnConta = input.nextLine();
+                        Conta contaS = BrasilBank.AcharConta(conCPF, consnConta);
+                        if(contaS.getCpf().equals(null)) {
+                            System.out.println("Conta nao encontrada!");
+                        } else {
+                            System.out.println("Digite o valor que deseja sacar:");
+                            double sacar = input.nextDouble();
+                            BrasilBank.sacar(sacar, contaS);
+                            System.out.println("Valor sacado!");
+                        }
 
                 case 3: System.out.println("Programa encerrado!");
                         System.exit(0);

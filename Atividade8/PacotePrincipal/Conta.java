@@ -25,6 +25,9 @@ public class Conta {
     public double getSaldo() {
         return saldo;
     }
+    public void modificarSaldo(double valor) {
+        this.saldo += valor;
+    }
 
     public void criarNumeroDaConta() {
         String conta = "";

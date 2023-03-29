@@ -23,14 +23,15 @@ public class Banco{
     public void depositar(double valor, Conta conta) {
         for(int i = 0; i < this.quantidadeContas; i++) {
             if(this.contasBancarias[i].equals(conta)) {
-                this.contasBancarias[i].saldo += valor;
+                this.contasBancarias[i].modificarSaldo(valor);;
             }
         }
     }
     public void sacar(double valor, Conta conta) {
+        valor *= -1;
         for(int i = 0; i < this.quantidadeContas; i++) {
             if(this.contasBancarias[i].equals(conta)) {
-                this.contasBancarias[i].saldo -= valor;
+                this.contasBancarias[i].modificarSaldo(valor);;
             }
         }
     }
