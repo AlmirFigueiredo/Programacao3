@@ -1,10 +1,10 @@
 package Atividade8.PacotePrincipal;
 
 public class Conta {
-    protected String nome;
-    protected String cpf;
-    protected double saldo;
-    protected String numeroDaConta;
+    private String nome;
+    private String cpf;
+    private double saldo;
+    private String numeroDaConta;
 
     public Conta(){}
     public Conta(String nome, String cpf, double saldoInicial) {
@@ -12,6 +12,18 @@ public class Conta {
         this.cpf = cpf;
         this.saldo = saldoInicial;
         criarNumeroDaConta();
+    }
+    public String getCpf() {
+        return cpf;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public String getNumeroDaConta() {
+        return numeroDaConta;
+    }
+    public double getSaldo() {
+        return saldo;
     }
 
     public void criarNumeroDaConta() {

@@ -19,14 +19,7 @@ public class Banco{
         this.quantidadeContas++;
         this.contasBancarias = temp;
     }
-    public void removerConta(String numeroDaConta, String cpf) {
-        for(int i = 0; i < this.quantidadeContas; i++) {
-            if(contasBancarias[i].cpf.equals(cpf) && contasBancarias[i].numeroDaConta.equals(numeroDaConta)) {
-                this.contasBancarias[i] = null;
-                this.quantidadeContas--;
-            }
-        }
-    }
+
     public void depositar(double valor, Conta conta) {
         for(int i = 0; i < this.quantidadeContas; i++) {
             if(this.contasBancarias[i].equals(conta)) {
@@ -40,6 +33,16 @@ public class Banco{
                 this.contasBancarias[i].saldo -= valor;
             }
         }
+    }
+
+    public Conta AcharConta(String cpf, String numeroDaConta) {
+        for(int i = 0; i < this.quantidadeContas; i++) {
+            if(this.contasBancarias[i].cpf.equals(cpf) && this.contasBancarias[i].numeroDaConta.equals(numeroDaConta)) {
+                return this.contasBancarias[i];
+            }
+        }
+        Conta conta = new Conta();
+        return conta;
     }
     
 }

@@ -70,13 +70,23 @@ public class Main {
                         Conta novaConta = new Conta(nome, cpf, saldoInicial);
                         BrasilBank.adicionarConta(novaConta);
 
-                case 1: System.out.println("Digite o numero da sua conta:");
-                        String conta = input.nextLine();
-                        System.out.println("Digite o seu cpf:");
-                        String cpfBusca = input.nextLine();
-                        BrasilBank.removerConta(conta, cpfBusca);
+                case 1: input.nextLine();
+                        System.out.println("Digite o cpf:");
+                        String consCPF = input.nextLine();
+                        System.out.println("Digite o numero da conta:");
+                        String consNumConta = input.nextLine();
+                        Conta conta = BrasilBank.AcharConta(consCPF, consNumConta);
+                        if(conta.getCpf().equals(null)) {
+                            System.out.println("Conta nao encontrada!");
+                        } else {
+                            System.out.println("Digite o valor que deseja depositar:");
+                            double deposite = input.nextDouble();
+                            BrasilBank.depositar(deposite, conta);
+                            System.out.println("Valor depositado!");
+                        }
+
                         break;
-                case 2: System.out.println();
+                case 2: System.out.println("");
 
                 case 3: System.out.println("Programa encerrado!");
                         System.exit(0);
