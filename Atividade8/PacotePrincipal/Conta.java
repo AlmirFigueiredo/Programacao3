@@ -32,10 +32,10 @@ public class Conta {
     public void criarNumeroDaConta() {
         String conta = "";
         for(int i = 0; i < 6; i++) {
-            conta += (int)Math.random()*9;
+            conta += (int)(Math.random()*9);
         }
         conta += "-";
-        conta += (int)Math.random()*9;
+        conta += (int)(Math.random()*9);
         this.numeroDaConta = conta;
     }
     @Override 

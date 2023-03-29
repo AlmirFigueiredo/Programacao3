@@ -13,10 +13,12 @@ public class Banco{
     }
     public void adicionarConta(Conta novaConta) {
         Conta[] temp = new Conta[this.quantidadeContas+1];
-        for(int i = 0; i < this.quantidadeContas; i++) {
+        int i;
+        for(i = 0; i < this.quantidadeContas; i++) {
             temp[i] = this.contasBancarias[i];
         }
         this.quantidadeContas++;
+        temp[i] = novaConta;
         this.contasBancarias = temp;
     }
 
@@ -37,12 +39,15 @@ public class Banco{
     }
 
     public Conta AcharConta(String cpf, String numeroDaConta) {
+        Conta conta = new Conta();
+        if(this.quantidadeContas == 0) {
+            return conta;
+        }
         for(int i = 0; i < this.quantidadeContas; i++) {
             if(this.contasBancarias[i].getCpf().equals(cpf) && this.contasBancarias[i].getNumeroDaConta().equals(numeroDaConta)) {
                 return this.contasBancarias[i];
             }
         }
-        Conta conta = new Conta();
         return conta;
     }
     

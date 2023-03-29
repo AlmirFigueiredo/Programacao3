@@ -51,14 +51,14 @@ public class Main {
                         System.out.println("Digite uma opcao valida:");
                         day = input.nextInt();
             }
-            if(!(day > 7 || day < 0)) {
+            if(!(day > 7 || day < 0 || day == 1)) {
                 break;
             }
         }
-        System.out.println("Selecione a opcao que deseja:");
-        int option = input.nextInt();
-        showMainOptions();
         while(true) {
+            showMainOptions();
+            System.out.println("Selecione a opcao que deseja:");
+            int option = input.nextInt();
             switch(option) {
                 case 0: input.nextLine();
                         System.out.println("Digite o nome do usuario:");
@@ -71,6 +71,7 @@ public class Main {
                         BrasilBank.adicionarConta(novaConta);
                         System.out.println("Conta cadastrada!");
                         System.out.printf("O numero da sua conta e: %s\n", novaConta.getNumeroDaConta());
+                        break;
 
                 case 1: input.nextLine();
                         System.out.println("Digite o cpf:");
@@ -78,7 +79,7 @@ public class Main {
                         System.out.println("Digite o numero da conta:");
                         String consNumConta = input.nextLine();
                         Conta conta = BrasilBank.AcharConta(consCPF, consNumConta);
-                        if(conta.getCpf().equals(null)) {
+                        if(conta.getCpf() == null) {
                             System.out.println("Conta nao encontrada!");
                         } else {
                             System.out.println("Digite o valor que deseja depositar:");
@@ -94,7 +95,7 @@ public class Main {
                         System.out.println("Digite o numero da conta:");
                         String consnConta = input.nextLine();
                         Conta contaS = BrasilBank.AcharConta(conCPF, consnConta);
-                        if(contaS.getCpf().equals(null)) {
+                        if(contaS.getCpf() == null) {
                             System.out.println("Conta nao encontrada!");
                         } else {
                             System.out.println("Digite o valor que deseja sacar:");
@@ -102,15 +103,13 @@ public class Main {
                             BrasilBank.sacar(sacar, contaS);
                             System.out.println("Valor sacado!");
                         }
-
+                        break;
                 case 3: System.out.println("Programa encerrado!");
                         System.exit(0);
+                        break;
                 default: System.out.println("Digite uma opcao valida!!");
-
-
-
             }
-            if(!(option > 4 || option < 1)) {
+            if(option >= 3 || option < 0) {
                 break;
             }
         }
