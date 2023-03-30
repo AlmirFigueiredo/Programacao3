@@ -15,6 +15,13 @@ public class ContaEspecial extends ContaBancaria {
     }
     @Override
     public boolean equals(Object obj) {
-        t
+        if(this == obj) {
+            return true;
+        }
+        if(!(obj instanceof ContaEspecial)) {
+            return true;
+        }
+        ContaEspecial conta = (ContaEspecial)obj;
+        return this.getNomeDoCliente().equals(conta.getNomeDoCliente()) && this.getNumeroDaConta().equals(conta.getNumeroDaConta());
     }
 }
