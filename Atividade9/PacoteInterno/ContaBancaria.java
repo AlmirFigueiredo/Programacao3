@@ -5,7 +5,12 @@ public abstract class ContaBancaria {
     private double saldo;
     private String numeroDaConta;
 
-    public ContaBancaria(){}
+    public ContaBancaria(String nome, double saldo, String numeroDaConta){
+        this.nomeDoCliente = nome;
+        this.saldo = saldo;
+        this.numeroDaConta = numeroDaConta;
+
+    }
 
     //Getters:
     public String getNomeDoCliente() {
