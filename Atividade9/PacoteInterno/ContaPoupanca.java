@@ -12,5 +12,16 @@ public class ContaPoupanca extends ContaBancaria {
     public void setDiaDeRendimento(int diaDeRendimento) {
         this.diaDeRendimento = diaDeRendimento;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) {
+            return true;
+        }
+        if(!(obj instanceof ContaPoupanca)) {
+            return false;
+        }
+        ContaPoupanca conta = (ContaPoupanca)obj;
+        return this.getNomeDoCliente().equals(conta.getNomeDoCliente()) && this.getNumeroDaConta().equals(conta.getNumeroDaConta());
+    }
     
 }
