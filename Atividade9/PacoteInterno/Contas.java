@@ -13,7 +13,23 @@ public class Contas {
         this.listaDeContasPoupanca = new ContaPoupanca[this.quantidadeDeContasPoupanca];
     }
     public void IncluirContaPoupanca(ContaPoupanca conta) {
-
+        ContaPoupanca[] temp = new ContaPoupanca[this.quantidadeDeContasPoupanca+1];
+        int i;
+        for(i = 0; i < this.quantidadeDeContasPoupanca; i++) {
+            temp[i] = this.listaDeContasPoupanca[i];
+        }
+        temp[i] = conta;
+        this.listaDeContasPoupanca = temp;
     }
+    public void IncluirContaEspecial(ContaEspecial conta) {
+        ContaEspecial[] temp = new ContaEspecial[this.quantidadeDeContasEspeciais + 1];
+        int i;
+        for(i = 0; i < this.quantidadeDeContasEspeciais; i++) {
+            temp[i] = this.listaDeContasEspeciais[i];
+        }
+        temp[i] = conta;
+        this.listaDeContasEspeciais = temp;
+    }
+    
 
 }
