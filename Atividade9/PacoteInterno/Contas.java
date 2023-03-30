@@ -85,4 +85,28 @@ public class Contas {
         }
         System.out.println("Contas atualizadas!");
     }
+    public void mostrarSaldoDasContasPoupanca() {
+        if(this.quantidadeDeContasPoupanca == 0) {
+            System.out.println("Nao ha contas cadastradas!");
+            return;
+        }
+        for(int i = 0; i < this.quantidadeDeContasPoupanca; i++) {
+            String nome = this.listaDeContasPoupanca[i].getNomeDoCliente();
+            String conta = this.listaDeContasPoupanca[i].getNumeroDaConta();
+            double saldo = this.listaDeContasPoupanca[i].getSaldo();
+            System.out.printf("Nome: %s || Conta: %s || Saldo: %d\n", nome, conta, saldo);
+        }
+    }
+    public void mostrarSaldoDasContasEspeciais() {
+        if(this.quantidadeDeContasEspeciais == 0) {
+            System.out.println("Nao ha contas cadastradas!");
+            return;
+        }
+        for(int i = 0; i < this.quantidadeDeContasEspeciais; i++) {
+            String nome = this.listaDeContasEspeciais[i].getNomeDoCliente();
+            String conta = this.listaDeContasEspeciais[i].getNumeroDaConta();
+            double saldo = this.listaDeContasEspeciais[i].getSaldo();
+            System.out.printf("Nome: %s || Conta: %s || Saldo: %d\n", nome, conta, saldo);
+        }
+    }
 }
