@@ -20,6 +20,7 @@ public class Contas {
             temp[i] = this.listaDeContasPoupanca[i];
         }
         temp[i] = conta;
+        this.quantidadeDeContasPoupanca++;
         this.listaDeContasPoupanca = temp;
     }
 
@@ -30,6 +31,7 @@ public class Contas {
             temp[i] = this.listaDeContasEspeciais[i];
         }
         temp[i] = conta;
+        this.quantidadeDeContasEspeciais++;
         this.listaDeContasEspeciais = temp;
     }
 
@@ -73,5 +75,14 @@ public class Contas {
             }
         }
         System.out.println("Conta nao encontrada!");
+    }
+    public void atualizarContasPoupanca(int dia, double taxa) {
+        for(int i = 0; i < this.quantidadeDeContasPoupanca; i++) {
+            if(this.listaDeContasPoupanca[i].getDiaDeRendimento() == dia) {
+                double saldoAnterior = this.listaDeContasPoupanca[i].getSaldo();
+                this.listaDeContasPoupanca[i].setSaldo(saldoAnterior*(1+taxa));
+            }
+        }
+        System.out.println("Contas atualizadas!");
     }
 }
