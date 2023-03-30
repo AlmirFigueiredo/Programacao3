@@ -54,5 +54,24 @@ public class Contas {
         }
         System.out.println("Conta nao encontrada!");
     }
-
+    public void depositarContaPoupanca(double valor, ContaPoupanca poupanca) {
+        for (int i = 0; i < this.quantidadeDeContasPoupanca; i++) {
+            if(this.listaDeContasPoupanca[i].equals(poupanca)) {
+                double saldoAnterior = this.listaDeContasPoupanca[i].getSaldo();
+                this.listaDeContasPoupanca[i].setSaldo(saldoAnterior+valor);
+                return;
+            }
+        }
+        System.out.println("Conta nao encontrada!");
+    }
+    public void depositarContaEspecial(double valor, ContaEspecial conta) {
+        for(int i = 0; i < this.quantidadeDeContasEspeciais; i++) {
+            if(this.listaDeContasEspeciais[i].equals(conta)) {
+                double saldoAnterior = this.listaDeContasEspeciais[i].getSaldo();
+                this.listaDeContasPoupanca[i].setSaldo(saldoAnterior+valor);
+                return;
+            }
+        }
+        System.out.println("Conta nao encontrada!");
+    }
 }
