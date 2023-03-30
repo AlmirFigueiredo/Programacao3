@@ -30,6 +30,10 @@ public class Contas {
         temp[i] = conta;
         this.listaDeContasEspeciais = temp;
     }
+    public void sacarContaPoupanca(double valor, ContaPoupanca poupanca) {
     
+    }
+    
+
 
 }

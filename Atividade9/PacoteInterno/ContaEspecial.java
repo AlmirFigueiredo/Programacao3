@@ -13,5 +13,4 @@ public class ContaEspecial extends ContaBancaria {
     public void setLimite(double limite) {
         this.limite = limite;
     }
-    
 }
