@@ -13,4 +13,8 @@ public class ContaEspecial extends ContaBancaria {
     public void setLimite(double limite) {
         this.limite = limite;
     }
+    @Override
+    public boolean equals(Object obj) {
+        t
+    }
 }

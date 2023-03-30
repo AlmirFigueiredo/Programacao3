@@ -11,7 +11,6 @@ public abstract class ContaBancaria {
         this.numeroDaConta = numeroDaConta;
 
     }
-
     //Getters:
     public String getNomeDoCliente() {
         return nomeDoCliente;
@@ -32,17 +31,4 @@ public abstract class ContaBancaria {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    @Override
-    public boolean equals(Object obj) {
-        if(obj == this) {
-            return true;
-        }
-        if(!(obj instanceof ContaBancaria)) {
-            return false;
-        }
-        ContaBancaria conta = (ContaBancaria)obj;
-        return this.nomeDoCliente.equals(conta.nomeDoCliente) && this.numeroDaConta.equals(conta.numeroDaConta) && this.saldo == conta.saldo;
-    }
-
-
 }

@@ -31,7 +31,9 @@ public class Contas {
         this.listaDeContasEspeciais = temp;
     }
     public void sacarContaPoupanca(double valor, ContaPoupanca poupanca) {
-    
+        for(int i = 0; i < this.quantidadeDeContasPoupanca; i++) {
+            this.listaDeContasPoupanca[i].equals(poupanca);
+        }
     }
     
 
