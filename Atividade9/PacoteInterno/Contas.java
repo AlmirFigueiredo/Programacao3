@@ -79,7 +79,8 @@ public class Contas {
         for(int i = 0; i < this.quantidadeDeContasEspeciais; i++) {
             if(this.listaDeContasEspeciais[i].equals(conta)) {
                 double saldoAnterior = this.listaDeContasEspeciais[i].getSaldo();
-                this.listaDeContasPoupanca[i].setSaldo(saldoAnterior+valor);
+                this.listaDeContasEspeciais[i].setSaldo(saldoAnterior+valor);
+                this.listaDeContasEspeciais[i].setLimite((saldoAnterior+valor)*1.2);
                 return;
             }
         }
@@ -103,7 +104,7 @@ public class Contas {
             String nome = this.listaDeContasPoupanca[i].getNomeDoCliente();
             String conta = this.listaDeContasPoupanca[i].getNumeroDaConta();
             double saldo = this.listaDeContasPoupanca[i].getSaldo();
-            System.out.printf("Nome: %s || Conta: %s || Saldo: %d\n", nome, conta, saldo);
+            System.out.printf("Nome: %s || Conta: %s || Saldo: %.2f\n", nome, conta, saldo);
         }
     }
     public void mostrarSaldoDasContasEspeciais() {
@@ -115,7 +116,7 @@ public class Contas {
             String nome = this.listaDeContasEspeciais[i].getNomeDoCliente();
             String conta = this.listaDeContasEspeciais[i].getNumeroDaConta();
             double saldo = this.listaDeContasEspeciais[i].getSaldo();
-            System.out.printf("Nome: %s || Conta: %s || Saldo: %d\n", nome, conta, saldo);
+            System.out.printf("Nome: %s || Conta: %s || Saldo: %.2f\n", nome, conta, saldo);
         }
     }
     public ContaEspecial encontrarContaEspecial(String nome, String numeroDaConta) {
