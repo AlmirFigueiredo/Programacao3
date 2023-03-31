@@ -36,11 +36,13 @@ public class Contas {
     }
 
     public void sacarContaPoupanca(double valor, ContaPoupanca poupanca) {
-        if(poupanca.getSaldo()-valor < 0) {
-            System.out.println("Valor indisponivel!");
-        }
+
         for (int i = 0; i < this.quantidadeDeContasPoupanca; i++) {
             if(this.listaDeContasPoupanca[i].equals(poupanca)) {
+                if(poupanca.getSaldo()-valor < 0) {
+                    System.out.println("Saldo insuficiente!");
+                    return;
+                }
                 double saldoAnterior = this.listaDeContasPoupanca[i].getSaldo();
                 this.listaDeContasPoupanca[i].setSaldo(saldoAnterior-valor);
                 return;
@@ -50,9 +52,12 @@ public class Contas {
     }
 
     public void sacarContaEspecial(double valor, ContaEspecial conta) {
-        
         for(int i = 0; i < this.quantidadeDeContasEspeciais; i++) {
             if(this.listaDeContasEspeciais[i].equals(conta)) {
+                if(conta.getLimite() - valor < 0) {
+                    System.out.println("Limite excedido!!");
+                    return;
+                }
                 double saldoAnterior = this.listaDeContasEspeciais[i].getSaldo();
                 this.listaDeContasPoupanca[i].setSaldo(saldoAnterior-valor);
                 return;
