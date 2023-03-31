@@ -1,4 +1,4 @@
-package Atividade9.PacoteInterno;
+package Atividade10.PacoteInterno;
 
 public class ContaPoupanca extends ContaBancaria {
     private int diaDeRendimento;

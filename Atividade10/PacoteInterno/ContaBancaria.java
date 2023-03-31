@@ -1,4 +1,4 @@
-package Atividade9.PacoteInterno;
+package Atividade10.PacoteInterno;
 
 public abstract class ContaBancaria {
     private String nomeDoCliente;
