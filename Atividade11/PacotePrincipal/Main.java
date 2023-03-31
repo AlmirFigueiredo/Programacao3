@@ -1,10 +1,10 @@
-package Atividade10.PacotePrincipal;
+package Atividade11.PacotePrincipal;
 
 import java.util.Scanner;
 
-import Atividade10.PacoteInterno.ContaEspecial;
-import Atividade10.PacoteInterno.ContaPoupanca;
-import Atividade10.PacoteInterno.Contas;
+import Atividade11.PacoteInterno.ContaEspecial;
+import Atividade11.PacoteInterno.ContaPoupanca;
+import Atividade11.PacoteInterno.Contas;
 
 public class Main {
     public static double tax = 0.01;

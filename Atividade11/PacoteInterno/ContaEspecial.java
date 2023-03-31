@@ -1,4 +1,4 @@
-package Atividade10.PacoteInterno;
+package Atividade11.PacoteInterno;
 
 public class ContaEspecial extends ContaBancaria {
     private double limite;
