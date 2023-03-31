@@ -4,6 +4,7 @@ public class ContaEspecial extends ContaBancaria {
     private double limite;
     public ContaEspecial(String nome) {
         super(nome);
+        this.limite = ((this.getSaldo()*1.2)+250)*2;
     }
     //Getters and setters:
     public double getLimite() {

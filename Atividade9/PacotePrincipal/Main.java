@@ -64,9 +64,22 @@ public class Main {
                             }
 
                         } else if(contaOption == 2) {
-
+                            input.nextLine();
+                            System.out.println("Digite o seu nome completo:");
+                            nome = input.nextLine();
+                            System.out.println("Digite o numero da sua conta:");
+                            numeroDaConta = input.nextLine();
+                            ContaPoupanca conta = brasilBank.encontrarContaPoupanca(nome, numeroDaConta);
+                            if(conta == null) {
+                                System.out.println("Conta nao encontrada!!");
+                            } else {
+                                System.out.println("Conta encontrada, digite o valor que deseja sacar:");
+                                double saque = input.nextDouble();
+                                brasilBank.sacarContaPoupanca(saque, conta);
+                                
+                            }
                         } else {
-
+                            System.out.println("Opcao invalida!!");
                         }
                         break; 
                 case 3: 
