@@ -2,9 +2,8 @@ package Atividade9.PacoteInterno;
 
 public class ContaEspecial extends ContaBancaria {
     private double limite;
-    public ContaEspecial(String nome, String numeroDaConta, double saldo, double limite) {
-        super(nome, saldo, numeroDaConta);
-        this.limite = limite;
+    public ContaEspecial(String nome) {
+        super(nome);
     }
     //Getters and setters:
     public double getLimite() {

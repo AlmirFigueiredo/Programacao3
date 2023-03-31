@@ -5,9 +5,9 @@ public abstract class ContaBancaria {
     private double saldo;
     private String numeroDaConta;
 
-    public ContaBancaria(String nome, double saldo, String numeroDaConta){
+    public ContaBancaria(String nome){
         this.nomeDoCliente = nome;
-        this.saldo = saldo;
+        this.saldo = 0;
         this.numeroDaConta = createAccount();
     }
     public String createAccount() {
