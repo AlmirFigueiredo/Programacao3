@@ -3,6 +3,7 @@ package Atividade9.PacotePrincipal;
 import java.util.Scanner;
 
 import Atividade9.PacoteInterno.ContaEspecial;
+import Atividade9.PacoteInterno.ContaPoupanca;
 import Atividade9.PacoteInterno.Contas;
 
 public class Main {
@@ -10,7 +11,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Contas brasilBank = new Contas();
         System.out.println("Bem vindo ao brasilBank!");
-        int contaOption;
+        int contaOption, diaRendimento;
         String nome, numeroDaConta;
         while(true) {
             showMainOptions();
@@ -27,9 +28,16 @@ public class Main {
                             brasilBank.IncluirContaEspecial(conta);;
                             System.out.println("Conta cadastrada com sucesso!");
                             System.out.printf("O numero da sua conta bancaria e: %s\n", conta.getNumeroDaConta());
-                            
+                            System.out.println("Para depositar um valor inicial, acesse a aba 'depositar'");
                         } else if(contaOption == 2) {
-
+                            input.nextLine();
+                            System.out.println("Digite o seu nome completo:");
+                            nome = input.nextLine();
+                            System.out.println("Digite o dia de hoje (apenas o dia do mes):");
+                            diaRendimento = input.nextInt();
+                            ContaPoupanca conta = new ContaPoupanca(nome, diaRendimento);
+                            brasilBank.IncluirContaPoupanca(conta);
+                            System.out.println("Conta cadastrada!");
                         } else {
                             System.out.println("Opcao invalida!");
                         }

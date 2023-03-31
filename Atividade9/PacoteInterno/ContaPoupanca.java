@@ -2,8 +2,9 @@ package Atividade9.PacoteInterno;
 
 public class ContaPoupanca extends ContaBancaria {
     private int diaDeRendimento;
-    public ContaPoupanca(String nome, double saldo, String numeroDaConta) {
-        super(nome, saldo, numeroDaConta);
+    public ContaPoupanca(String nome, int dia) {
+        super(nome);
+        this.diaDeRendimento = dia;
     }
     //Getter and Setter:
     public int getDiaDeRendimento() {
