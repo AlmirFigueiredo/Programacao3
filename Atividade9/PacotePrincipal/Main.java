@@ -7,7 +7,7 @@ import Atividade9.PacoteInterno.ContaPoupanca;
 import Atividade9.PacoteInterno.Contas;
 
 public class Main {
-    public static double tax = 1/100;
+    public static double tax = 0.01;
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Contas brasilBank = new Contas();
@@ -15,6 +15,7 @@ public class Main {
         int contaOption, diaRendimento;
         String nome, numeroDaConta;
         while(true) {
+            System.out.println("======================================================================");
             showMainOptions();
             int mainOption = input.nextInt();
             switch(mainOption) {
@@ -39,6 +40,8 @@ public class Main {
                             ContaPoupanca conta = new ContaPoupanca(nome, diaRendimento);
                             brasilBank.IncluirContaPoupanca(conta);
                             System.out.println("Conta cadastrada!");
+                            System.out.printf("O numero da sua conta bancaria e: %s\n", conta.getNumeroDaConta());
+                            System.out.println("Para depositar um valor inicial, acesse a aba 'depositar'");
                         } else {
                             System.out.println("Opcao invalida!");
                         }
@@ -113,12 +116,12 @@ public class Main {
                         brasilBank.atualizarContasPoupanca(diaRendimento, tax);
                         break;
 
-                case 5: System.out.println("=============Contas Especiais=============");
+                case 5: System.out.println("==================Contas Especiais==================");
                         brasilBank.mostrarSaldoDasContasEspeciais();
-                        System.out.println("============================================");
-                        System.out.println("===============Contas Poupanca===============");
+                        System.out.println("======================================================");
+                        System.out.println("====================Contas Poupanca====================");
                         brasilBank.mostrarSaldoDasContasPoupanca();
-                        System.out.println("============================================");
+                        System.out.println("=========================================================");
                         break;
 
                 case 6: break;

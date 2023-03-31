@@ -59,7 +59,7 @@ public class Contas {
                     return;
                 }
                 double saldoAnterior = this.listaDeContasEspeciais[i].getSaldo();
-                this.listaDeContasPoupanca[i].setSaldo(saldoAnterior-valor);
+                this.listaDeContasEspeciais[i].setSaldo(saldoAnterior-valor);
                 return;
             }
         }
@@ -89,8 +89,7 @@ public class Contas {
     public void atualizarContasPoupanca(int dia, double taxa) {
         for(int i = 0; i < this.quantidadeDeContasPoupanca; i++) {
             if(this.listaDeContasPoupanca[i].getDiaDeRendimento() == dia) {
-                double saldoAnterior = this.listaDeContasPoupanca[i].getSaldo();
-                this.listaDeContasPoupanca[i].setSaldo(saldoAnterior*(1+taxa));
+                this.listaDeContasPoupanca[i].incrementarSaldo(taxa);
             }
         }
         System.out.println("Contas atualizadas!");

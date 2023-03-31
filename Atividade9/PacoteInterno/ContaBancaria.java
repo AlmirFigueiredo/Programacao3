@@ -37,4 +37,7 @@ public abstract class ContaBancaria {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+    public void incrementarSaldo(double taxa) {
+        this.saldo += (this.saldo*(taxa));
+    }
 }
