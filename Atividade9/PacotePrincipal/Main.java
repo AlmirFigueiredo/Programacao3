@@ -60,7 +60,6 @@ public class Main {
                                 System.out.println("Conta encontrada, digite o valor que deseja sacar:");
                                 double saque = input.nextDouble();
                                 brasilBank.sacarContaEspecial(saque, conta);
-
                             }
 
                         } else if(contaOption == 2) {
@@ -76,13 +75,47 @@ public class Main {
                                 System.out.println("Conta encontrada, digite o valor que deseja sacar:");
                                 double saque = input.nextDouble();
                                 brasilBank.sacarContaPoupanca(saque, conta);
-                                
                             }
                         } else {
                             System.out.println("Opcao invalida!!");
                         }
                         break; 
-                case 3: 
+                case 3: System.out.println("Deseja realizar o deposito em qual conta?");
+                        showSecondOptions();
+                        contaOption = input.nextInt();
+                        if(contaOption == 1) {
+                            input.nextLine();
+                            System.out.println("Digite o nome:");
+                            nome = input.nextLine();
+                            System.out.println("Digite o numero da conta:");
+                            numeroDaConta = input.nextLine();
+                            ContaEspecial conta = brasilBank.encontrarContaEspecial(nome, numeroDaConta);
+                            if(conta == null) {
+                                System.out.println("Conta nao encontrada!");
+                            } else {
+                                System.out.println("Conta encontrada!!");
+                                System.out.println("Digite o valor que deseja depositar:");
+                                double deposito = input.nextDouble();
+                                brasilBank.depositarContaEspecial(deposito, conta);
+                            }
+                        } else if(contaOption == 2) {
+                            input.nextLine();
+                            System.out.println("Digite o nome:");
+                            nome = input.nextLine();
+                            System.out.println("Digite o numero da conta:");
+                            numeroDaConta = input.nextLine();
+                            ContaPoupanca conta = brasilBank.encontrarContaPoupanca(nome, numeroDaConta);
+                            if(conta == null) {
+                                System.out.println("Conta nao encontrada!!");
+                            } else {
+                                System.out.println("Conta encontrada!!");
+                                System.out.println("Digite o valor que deseja depositar:");
+                                double valor = input.nextDouble();
+                                brasilBank.depositarContaPoupanca(valor, conta);
+                            }
+                        } else {
+                            System.out.println("Opcao invalida!");
+                        }
                         break;
                 case 4: System.out.println("Digite o dia de hoje:");
                         diaRendimento = input.nextInt();
@@ -102,10 +135,6 @@ public class Main {
             if(mainOption == 6) {
                 break;
             }
-
-
-
-
         }
         System.out.println("Programa encerrado!");
         input.close();
