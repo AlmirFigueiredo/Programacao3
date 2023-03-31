@@ -8,8 +8,14 @@ public abstract class ContaBancaria {
     public ContaBancaria(String nome, double saldo, String numeroDaConta){
         this.nomeDoCliente = nome;
         this.saldo = saldo;
-        this.numeroDaConta = numeroDaConta;
-
+        this.numeroDaConta = createAccount();
+    }
+    public String createAccount() {
+        String ans = "";
+        for(int i = 0; i < 8; i++) {
+            ans += (int)(Math.random()*9);
+        }
+        return ans;
     }
     //Getters:
     public String getNomeDoCliente() {
