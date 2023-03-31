@@ -48,7 +48,21 @@ public class Main {
                         showSecondOptions();
                         contaOption = input.nextInt();
                         if(contaOption == 1) {
-                            
+                            input.nextLine();
+                            System.out.println("Digite o seu nome completo:");
+                            nome = input.nextLine();
+                            System.out.println("Digite o numero da sua conta:");
+                            numeroDaConta = input.nextLine();
+                            ContaEspecial conta = brasilBank.encontrarContaEspecial(nome, numeroDaConta);
+                            if(conta == null) {
+                                System.out.println("Conta nao encontrada!");
+                            } else {
+                                System.out.println("Conta encontrada, digite o valor que deseja sacar:");
+                                double saque = input.nextDouble();
+                                brasilBank.sacarContaEspecial(saque, conta);
+
+                            }
+
                         } else if(contaOption == 2) {
 
                         } else {
