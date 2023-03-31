@@ -54,9 +54,7 @@ public class Main {
                             System.out.println("Digite o numero da sua conta:");
                             numeroDaConta = input.nextLine();
                             ContaEspecial conta = brasilBank.encontrarContaEspecial(nome, numeroDaConta);
-                            if(conta == null) {
-                                System.out.println("Conta nao encontrada!");
-                            } else {
+                            if(conta != null) {
                                 System.out.println("Conta encontrada, digite o valor que deseja sacar:");
                                 double saque = input.nextDouble();
                                 brasilBank.sacarContaEspecial(saque, conta);
@@ -69,9 +67,7 @@ public class Main {
                             System.out.println("Digite o numero da sua conta:");
                             numeroDaConta = input.nextLine();
                             ContaPoupanca conta = brasilBank.encontrarContaPoupanca(nome, numeroDaConta);
-                            if(conta == null) {
-                                System.out.println("Conta nao encontrada!!");
-                            } else {
+                            if(conta != null) {
                                 System.out.println("Conta encontrada, digite o valor que deseja sacar:");
                                 double saque = input.nextDouble();
                                 brasilBank.sacarContaPoupanca(saque, conta);
@@ -90,9 +86,7 @@ public class Main {
                             System.out.println("Digite o numero da conta:");
                             numeroDaConta = input.nextLine();
                             ContaEspecial conta = brasilBank.encontrarContaEspecial(nome, numeroDaConta);
-                            if(conta == null) {
-                                System.out.println("Conta nao encontrada!");
-                            } else {
+                            if(conta != null) {
                                 System.out.println("Conta encontrada!!");
                                 System.out.println("Digite o valor que deseja depositar:");
                                 double deposito = input.nextDouble();
@@ -105,10 +99,7 @@ public class Main {
                             System.out.println("Digite o numero da conta:");
                             numeroDaConta = input.nextLine();
                             ContaPoupanca conta = brasilBank.encontrarContaPoupanca(nome, numeroDaConta);
-                            if(conta == null) {
-                                System.out.println("Conta nao encontrada!!");
-                            } else {
-                                System.out.println("Conta encontrada!!");
+                            if(conta != null) {
                                 System.out.println("Digite o valor que deseja depositar:");
                                 double valor = input.nextDouble();
                                 brasilBank.depositarContaPoupanca(valor, conta);
@@ -127,6 +118,7 @@ public class Main {
                         System.out.println("============================================");
                         System.out.println("===============Contas Poupanca===============");
                         brasilBank.mostrarSaldoDasContasPoupanca();
+                        System.out.println("============================================");
                         break;
 
                 case 6: break;
