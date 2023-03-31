@@ -7,6 +7,7 @@ import Atividade9.PacoteInterno.ContaPoupanca;
 import Atividade9.PacoteInterno.Contas;
 
 public class Main {
+    public static double tax = 1/100;
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Contas brasilBank = new Contas();
@@ -43,14 +44,31 @@ public class Main {
                         }
 
                         break;
-                case 2: 
+                case 2: System.out.println("Deseja realizar saque de qual tipo de conta?");
+                        showSecondOptions();
+                        contaOption = input.nextInt();
+                        if(contaOption == 1) {
+                            
+                        } else if(contaOption == 2) {
+
+                        } else {
+
+                        }
                         break; 
                 case 3: 
                         break;
-                case 4: 
+                case 4: System.out.println("Digite o dia de hoje:");
+                        diaRendimento = input.nextInt();
+                        brasilBank.atualizarContasPoupanca(diaRendimento, tax);
                         break;
-                case 5: 
+
+                case 5: System.out.println("=============Contas Especiais=============");
+                        brasilBank.mostrarSaldoDasContasEspeciais();
+                        System.out.println("============================================");
+                        System.out.println("===============Contas Poupanca===============");
+                        brasilBank.mostrarSaldoDasContasPoupanca();
                         break;
+
                 case 6: break;
                 default: System.out.println("Opcao invalida!");
             }
