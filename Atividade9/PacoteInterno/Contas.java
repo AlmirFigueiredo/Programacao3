@@ -109,4 +109,21 @@ public class Contas {
             System.out.printf("Nome: %s || Conta: %s || Saldo: %d\n", nome, conta, saldo);
         }
     }
+    public ContaEspecial encontrarContaEspecial(String nome, String numeroDaConta) {
+        for(int i = 0; i < this.quantidadeDeContasEspeciais; i++) {
+            if(this.listaDeContasEspeciais[i].getNumeroDaConta().equals(numeroDaConta) && this.listaDeContasEspeciais[i].getNomeDoCliente().equals(nome)) {
+                return this.listaDeContasEspeciais[i];
+            }
+        }
+        System.out.println("Conta nao encontrada!");
+        return null;
+    }
+    public ContaPoupanca encontrarContaPoupanca(String nome, String numeroDaConta) {
+        for(int i = 0; i < this.quantidadeDeContasPoupanca; i++) {
+            if(this.listaDeContasPoupanca[i].getNomeDoCliente().equals(nome) && this.listaDeContasPoupanca[i].getNumeroDaConta().equals(numeroDaConta)) {
+                return this.listaDeContasPoupanca[i];
+            }
+        }
+        return null;
+    }
 }
