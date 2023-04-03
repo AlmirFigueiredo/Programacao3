@@ -10,4 +10,22 @@ public abstract class Empregado {
         this.sobrenome = sobrenome;
         this.cpf = cpf;
     }
+    public String getCpf() {
+        return cpf;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public String getSobrenome() {
+        return sobrenome;
+    }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
 }
